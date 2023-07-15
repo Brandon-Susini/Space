@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7feycji4nnlr"]
+
+[ext_resource type="Texture2D" uid="uid://dhi44dtteyx4v" path="res://Donuts.png" id="1_34jwp"]
+[ext_resource type="Script" path="res://planet.gd" id="1_avduq"]
+[ext_resource type="Resource" uid="uid://bi5bqs4uwe63i" path="res://SlowPlanet.tres" id="2_wyynj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tv03l"]
+radius = 53.0094
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vrv6q"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 2.0
+emission_ring_radius = 8.0
+emission_ring_inner_radius = 0.0
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 37.04
+initial_velocity_max = 135.8
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[node name="Planet" type="Area2D"]
+position = Vector2(600, 350)
+script = ExtResource("1_avduq")
+planet_stats = ExtResource("2_wyynj")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_34jwp")
+region_enabled = true
+region_rect = Rect2(434, 8.5, 133, 129)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tv03l")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_vrv6q")

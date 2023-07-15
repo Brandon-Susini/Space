@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlanetResource" load_steps=2 format=3 uid="uid://cnj6ixlnw3sdv"]
+
+[ext_resource type="Script" path="res://PlanetResource.gd" id="1_l4g0n"]
+
+[resource]
+script = ExtResource("1_l4g0n")
+rotation_speed = 6.283
+particle_velocity = 50.0
+emission_shape = "Sphere"
+orbit_distance = 200.0

@@ -1,0 +1,79 @@
+{
+	"categories": [
+		{
+			"uuid": "4354e3d9-3432-4cd3-a4e6-056353978db1",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "ef937c75-b330-4e53-af5a-2aa4eaa1f143",
+			"title": "Todo",
+			"tasks": [
+				"3ce2c546-5743-4771-af19-8c414979c093"
+			]
+		},
+		{
+			"uuid": "60689c45-0173-4b65-9fb8-b80f5372b9c1",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "6428c9d0-5cd0-497c-a6a9-a8c046056466",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "3ce2c546-5743-4771-af19-8c414979c093",
+			"title": "Create Custom Resource for planet variables",
+			"description": "* Rotation Speed\n* Distance From Origin\n\nParticles\n* Angle of particles\n* Emission Velocity\n* Color of particles\n* Turbulence of particles\n* Time alive for particles",
+			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
+			"steps": [
+				{
+					"details": "Rotation SPeed",
+					"done": false
+				},
+				{
+					"details": "Distance From Origin",
+					"done": false
+				},
+				{
+					"details": "P Angle",
+					"done": false
+				},
+				{
+					"details": "P Emission Velocity",
+					"done": false
+				},
+				{
+					"details": "P Color",
+					"done": false
+				},
+				{
+					"details": "P Turbulence",
+					"done": false
+				},
+				{
+					"details": "P Time Alive",
+					"done": false
+				}
+			]
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"ef937c75-b330-4e53-af5a-2aa4eaa1f143"
+			],
+			[
+				"60689c45-0173-4b65-9fb8-b80f5372b9c1"
+			],
+			[
+				"6428c9d0-5cd0-497c-a6a9-a8c046056466"
+			]
+		]
+	}
+}
