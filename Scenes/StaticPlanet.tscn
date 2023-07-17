@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnytt3q4bkrq1"]
+
+[ext_resource type="Script" path="res://Scripts/planet.gd" id="1_28u3s"]
+[ext_resource type="Resource" uid="uid://bi5bqs4uwe63i" path="res://Resources/SlowPlanet.tres" id="2_tq83s"]
+[ext_resource type="Texture2D" uid="uid://b7samym0fkhp8" path="res://neutral_point_light.webp" id="3_knewb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tv03l"]
+radius = 53.0094
+
+[sub_resource type="Curve" id="Curve_6rwd8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gwk1r"]
+curve = SubResource("Curve_6rwd8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vrv6q"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 1)
+emission_ring_height = 2.0
+emission_ring_radius = 20.0
+emission_ring_inner_radius = 0.0
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 180.25
+initial_velocity_max = 180.25
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_gwk1r")
+
+[node name="Planet" type="Area2D"]
+script = ExtResource("1_28u3s")
+planet_stats = ExtResource("2_tq83s")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(7, 6)
+energy = 0.2
+shadow_enabled = true
+shadow_color = Color(1, 1, 1, 0.627451)
+texture = ExtResource("3_knewb")
+texture_scale = 0.5
+height = 20.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+region_rect = Rect2(307.753, 28.6523, 104.533, 109.179)
+metadata/_aseprite_wizard_config_ = {
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"op_exp": false,
+"player": "",
+"source": "res://BombTestAnimated-export.aseprite"
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tv03l")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_vrv6q")
+trail_enabled = true

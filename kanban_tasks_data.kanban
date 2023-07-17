@@ -11,7 +11,8 @@
 			"uuid": "ef937c75-b330-4e53-af5a-2aa4eaa1f143",
 			"title": "Todo",
 			"tasks": [
-				"3ce2c546-5743-4771-af19-8c414979c093"
+				"fd91de32-5a79-4d93-a585-2353f8f7b7b2",
+				"bfb74ce9-ea36-49b2-81db-2f48e2d0cf99"
 			]
 		},
 		{
@@ -22,7 +23,11 @@
 		{
 			"uuid": "6428c9d0-5cd0-497c-a6a9-a8c046056466",
 			"title": "Done",
-			"tasks": []
+			"tasks": [
+				"3ce2c546-5743-4771-af19-8c414979c093",
+				"4a270e29-7c38-421b-a40a-f946f88ee2b0",
+				"0549fa4c-84dd-43ff-8f5f-8f90cf183dbe"
+			]
 		}
 	],
 	"tasks": [
@@ -34,33 +39,61 @@
 			"steps": [
 				{
 					"details": "Rotation SPeed",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Distance From Origin",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "P Angle",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "P Emission Velocity",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "P Color",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "P Turbulence",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "P Time Alive",
-					"done": false
+					"done": true
 				}
 			]
+		},
+		{
+			"uuid": "fd91de32-5a79-4d93-a585-2353f8f7b7b2",
+			"title": "Make UI controls for resource values",
+			"description": "Have global for scale and whenever a planet leaves the visibility plane (Visible Node 2D or something) turn the scale down 0.1 or something like that.",
+			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
+			"steps": []
+		},
+		{
+			"uuid": "0549fa4c-84dd-43ff-8f5f-8f90cf183dbe",
+			"title": "Make a RandomPlanet Class and a regular Planet Class",
+			"description": "",
+			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
+			"steps": []
+		},
+		{
+			"uuid": "bfb74ce9-ea36-49b2-81db-2f48e2d0cf99",
+			"title": "Making all the planets in a scene unique",
+			"description": "",
+			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
+			"steps": []
+		},
+		{
+			"uuid": "4a270e29-7c38-421b-a40a-f946f88ee2b0",
+			"title": "Find out how to get arleys bomb in my project",
+			"description": "",
+			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
+			"steps": []
 		}
 	],
 	"layout": {

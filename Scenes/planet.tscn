@@ -1,39 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7feycji4nnlr"]
+[gd_scene load_steps=6 format=3 uid="uid://c7feycji4nnlr"]
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_v5w5f"]
 [ext_resource type="Resource" uid="uid://bi5bqs4uwe63i" path="res://Resources/SlowPlanet.tres" id="2_kwirt"]
 [ext_resource type="Texture2D" uid="uid://b7samym0fkhp8" path="res://neutral_point_light.webp" id="3_q1prs"]
-[ext_resource type="Texture2D" uid="uid://dhi44dtteyx4v" path="res://Donuts.png" id="3_xtsjg"]
+[ext_resource type="Material" uid="uid://bddw1dfxba4xi" path="res://Resources/PlanetParticles.tres" id="4_wi24u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tv03l"]
 radius = 53.0094
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vrv6q"]
-emission_shape = 6
-emission_ring_axis = Vector3(0, 0, 1)
-emission_ring_height = 2.0
-emission_ring_radius = 8.0
-emission_ring_inner_radius = 0.0
-particle_flag_disable_z = true
-spread = 0.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 37.04
-initial_velocity_max = 135.8
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_min = 2.0
-scale_max = 2.0
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_abmq1"]
-polygon = PackedVector2Array(-281.02, -76.2419, -277.02, -73.2419, -277.02, -69.2419, -273.42, -69.2419, -269.02, -66.3419, -269.02, -63.2419, -268.12, -42.2419, -264.22, -42.2419, -259.02, -37.0419, -259.02, -13.2419, -261.02, -13.2419, -264.02, -9.24189, -268.02, -9.24189, -268.02, -5.64189, -270.92, -1.24189, -273.62, -1.24189, -277.02, -0.541889, -277.02, 3.35811, -279.92, 7.75811, -283.02, 7.75811, -304.02, 8.65812, -304.02, 12.5581, -309.22, 17.7581, -322.82, 17.7581, -328.02, 12.5581, -328.02, 8.75811, -331.62, 8.75811, -336.02, 5.85811, -336.02, 3.15812, -336.72, -0.241886, -340.62, -0.241886, -345.02, -3.14189, -345.02, -5.84188, -345.72, -9.24189, -349.62, -9.24189, -354.02, -12.1419, -354.02, -49.2419, -351.62, -49.2419, -346.02, -50.8419, -346.02, -55.0419, -340.82, -60.2419, -337.02, -60.2419, -337.02, -64.0419, -331.82, -69.2419, -328.02, -69.2419, -328.02, -73.2419, -324.02, -76.2419, -324.02, -78.2419, -281.02, -78.2419)
 
 [node name="Planet" type="Area2D"]
 script = ExtResource("1_v5w5f")
 planet_stats = ExtResource("2_kwirt")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(64, 32)
+position = Vector2(7, 6)
+energy = 0.2
 shadow_enabled = true
 shadow_color = Color(1, 1, 1, 0.627451)
 texture = ExtResource("3_q1prs")
@@ -41,18 +22,10 @@ texture_scale = 0.5
 height = 20.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_xtsjg")
-region_enabled = true
 region_rect = Rect2(307.753, 28.6523, 104.533, 109.179)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tv03l")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-process_material = SubResource("ParticleProcessMaterial_vrv6q")
-trail_enabled = true
-trail_sections = 2
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(307, 27)
-occluder = SubResource("OccluderPolygon2D_abmq1")
+process_material = ExtResource("4_wi24u")

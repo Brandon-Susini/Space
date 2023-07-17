@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="PlanetResource" load_steps=2 format=3 uid="uid://cnj6ixlnw3sdv"]
+[gd_resource type="Resource" script_class="PlanetResource" load_steps=3 format=3 uid="uid://cnj6ixlnw3sdv"]
 
 [ext_resource type="Script" path="res://Scripts/PlanetResource.gd" id="1_l4g0n"]
+[ext_resource type="SpriteFrames" uid="uid://calagxplon6yy" path="res://DonutFrames.tres" id="1_nwhf1"]
 
 [resource]
 script = ExtResource("1_l4g0n")
-rotation_speed = 6.283
+rotation_speed = 1.047
 particle_velocity = 50.0
+particle_velocity_range = 0.0
 emission_shape = "Sphere"
 orbit_distance = 200.0
+particle_color = Vector3(0, 0, 0)
+particle_spread = 0.0
+donut_frames = ExtResource("1_nwhf1")

@@ -1,0 +1,25 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://bddw1dfxba4xi"]
+
+[sub_resource type="Curve" id="Curve_6rwd8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gwk1r"]
+curve = SubResource("Curve_6rwd8")
+
+[resource]
+emission_shape = 6
+emission_ring_axis = Vector3(1, 1, 1)
+emission_ring_height = 10.0
+emission_ring_radius = 41.82
+emission_ring_inner_radius = 20.0
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 353.09
+initial_velocity_max = 353.09
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 10.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_gwk1r")

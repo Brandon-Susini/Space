@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_bn52d")
-rotation_speed = 1.571
+rotation_speed = 0.785
 particle_velocity = 1.0
 particle_velocity_range = 20.0
 emission_shape = "Sphere"

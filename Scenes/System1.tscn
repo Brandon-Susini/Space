@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" path="res://Scenes/System1.gd" id="1_3tljd"]
 [ext_resource type="PackedScene" uid="uid://c7feycji4nnlr" path="res://Scenes/planet.tscn" id="1_grdv0"]
+[ext_resource type="PackedScene" uid="uid://df4tn024u04q0" path="res://bomb.tscn" id="2_y2gxd"]
+[ext_resource type="Resource" uid="uid://cnj6ixlnw3sdv" path="res://Resources/FastPlanet.tres" id="3_bqncp"]
 
 [sub_resource type="Gradient" id="Gradient_8slhm"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.912903)
+offsets = PackedFloat32Array(0, 0.724138)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j55cn"]
@@ -14,62 +16,70 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="Gradient" id="Gradient_eo6xu"]
-offsets = PackedFloat32Array(0.977419, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_b7xjd"]
-gradient = SubResource("Gradient_eo6xu")
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e1snm"]
-polygon = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+[sub_resource type="Curve2D" id="Curve2D_56wh2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1920, 0, 0, 0, 0, 0, 1920, 1080, 0, 0, 0, 0, 0, 1080, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8)
+}
+point_count = 6
 
 [node name="System1" type="Node"]
 script = ExtResource("1_3tljd")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-z_index = -10
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 1)
+meteor_speed = 500.0
+meteor_scene = ExtResource("2_y2gxd")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(1239, 49)
-rotation = 3.04288
+position = Vector2(1977, 17)
+scale = Vector2(1.49835, 1)
+energy = 0.65
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_j55cn")
-texture_scale = 45.51
-height = 2000.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(640, 360)
-scale = Vector2(25.28, 25.28)
-texture = SubResource("GradientTexture2D_b7xjd")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
-visible = false
-occluder = SubResource("OccluderPolygon2D_e1snm")
+texture_scale = 41.58
+height = 1000.0
 
 [node name="PlanetHolder" type="Node2D" parent="."]
-position = Vector2(640, 360)
 
 [node name="Planet" parent="PlanetHolder" node_paths=PackedStringArray("origin") instance=ExtResource("1_grdv0")]
 position = Vector2(2.08165e-12, 2.08165e-12)
 origin = NodePath("..")
 
-[node name="Planet2" parent="PlanetHolder" instance=ExtResource("1_grdv0")]
+[node name="Planet2" parent="PlanetHolder" node_paths=PackedStringArray("origin") instance=ExtResource("1_grdv0")]
+origin = NodePath("..")
+planet_stats = ExtResource("3_bqncp")
 
-[node name="Planet3" parent="PlanetHolder" instance=ExtResource("1_grdv0")]
+[node name="Planet3" parent="PlanetHolder" node_paths=PackedStringArray("origin") instance=ExtResource("1_grdv0")]
+origin = NodePath("..")
+
+[node name="Planet4" parent="PlanetHolder" instance=ExtResource("1_grdv0")]
+
+[node name="Planet5" parent="PlanetHolder" instance=ExtResource("1_grdv0")]
+planet_stats = ExtResource("3_bqncp")
+
+[node name="Planet6" parent="PlanetHolder" instance=ExtResource("1_grdv0")]
+planet_stats = ExtResource("3_bqncp")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
-position = Vector2(282, 389)
-rotation = 2.13647
-energy = 3.42
 shadow_enabled = true
 shadow_color = Color(0.988235, 0.984314, 0.988235, 0)
-height = 0.73
+height = 0.06
+max_distance = 1.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.235294, 0.235294, 0.235294, 1)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_56wh2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[node name="MeteorSpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="MeteorSpawnTimer" to="." method="_on_meteor_spawn_timer_timeout"]
