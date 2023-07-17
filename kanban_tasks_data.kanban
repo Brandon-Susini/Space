@@ -11,6 +11,7 @@
 			"uuid": "ef937c75-b330-4e53-af5a-2aa4eaa1f143",
 			"title": "Todo",
 			"tasks": [
+				"f7573039-2e65-4f6e-a65c-e202e22742df",
 				"fd91de32-5a79-4d93-a585-2353f8f7b7b2",
 				"bfb74ce9-ea36-49b2-81db-2f48e2d0cf99"
 			]
@@ -91,6 +92,13 @@
 		{
 			"uuid": "4a270e29-7c38-421b-a40a-f946f88ee2b0",
 			"title": "Find out how to get arleys bomb in my project",
+			"description": "",
+			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
+			"steps": []
+		},
+		{
+			"uuid": "f7573039-2e65-4f6e-a65c-e202e22742df",
+			"title": "Implement idea of \"rings\" structure that stores the planet at each ring. When an asteroid destroy's them play an explosion animation and repopulate the ring some time from the impact.",
 			"description": "",
 			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
 			"steps": []

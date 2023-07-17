@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://df4tn024u04q0"]
+[gd_scene load_steps=15 format=3 uid="uid://df4tn024u04q0"]
 
 [ext_resource type="Script" path="res://bomb.gd" id="1_i6kav"]
 [ext_resource type="Texture2D" uid="uid://b383780po835k" path="res://bomb.png" id="1_lu0fj"]
 [ext_resource type="Texture2D" uid="uid://b5hbp3g8axvxw" path="res://SpaceRock.png" id="3_fv43i"]
 [ext_resource type="Material" uid="uid://bprcvpbrj22yx" path="res://Resources/particles.tres" id="3_k3v07"]
+[ext_resource type="Texture2D" uid="uid://b7samym0fkhp8" path="res://neutral_point_light.webp" id="5_2pstk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ciktl"]
 atlas = ExtResource("1_lu0fj")
@@ -73,16 +74,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5dfw"]
 radius = 92.1954
 
-[sub_resource type="Gradient" id="Gradient_3fiy4"]
-offsets = PackedFloat32Array(0, 0.193103, 0.689655)
-colors = PackedColorArray(0.32069, 0.32069, 0.32069, 1, 1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pfg5r"]
-gradient = SubResource("Gradient_3fiy4")
-fill = 1
-fill_from = Vector2(0.495726, 0.495726)
-fill_to = Vector2(0.988, 1)
-
 [node name="bomb" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_i6kav")
@@ -105,9 +96,17 @@ shape = SubResource("CircleShape2D_d5dfw")
 position = Vector2(-1, -107)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, -10)
-texture = SubResource("GradientTexture2D_pfg5r")
-texture_scale = 3.71
+position = Vector2(0, -114.56)
+scale = Vector2(1.5, 3.79487)
+energy = 1.77
+texture = ExtResource("5_2pstk")
+texture_scale = 0.39
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+scale = Vector2(1.5, 1.5)
+energy = 2.5
+texture = ExtResource("5_2pstk")
+texture_scale = 0.39
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
