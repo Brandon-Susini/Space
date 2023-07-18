@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckw3mbu7ttg33"]
+
+[ext_resource type="Texture2D" uid="uid://b7samym0fkhp8" path="res://neutral_point_light.webp" id="1_isai1"]
+[ext_resource type="Texture2D" uid="uid://bmab7rf8aguuh" path="res://sun1.png" id="2_6c7c8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qdn10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6c7c8")
+}],
+"loop": true,
+"name": &"sun",
+"speed": 5.0
+}]
+
+[node name="Sun" type="PointLight2D"]
+texture = ExtResource("1_isai1")
+texture_scale = 3.86
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qdn10")
+animation = &"sun"
+metadata/_edit_lock_ = true

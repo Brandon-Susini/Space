@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkfnpkmp0yo7"
-path="res://.godot/imported/plain_tower_gun.png-ad63fb779ffd9bd364fb07fd49c12caa.ctex"
+uid="uid://43n8i7bhg4he"
+path="res://.godot/imported/hex_shape_2d.svg-33b4a57aed136855fbb5d791f29eb5bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plain_tower_gun.png"
-dest_files=["res://.godot/imported/plain_tower_gun.png-ad63fb779ffd9bd364fb07fd49c12caa.ctex"]
+source_file="res://addons/sprite_painter/graphics/hex_shape_2d.svg"
+dest_files=["res://.godot/imported/hex_shape_2d.svg-33b4a57aed136855fbb5d791f29eb5bb.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -11,7 +11,7 @@ var areDonuts = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	path = $Path2D/PathFollow2D
-	sun = $Sun1
+	sun = $Sun
 	var screen = get_viewport().get_visible_rect().size
 	print(screen)
 	sun.position = Vector2(screen.x/2,screen.y/2)
@@ -19,7 +19,7 @@ func _ready():
 	
 	
 	
-	var children = sun.get_children()
+	var children = sun.get_children().filter(func(node): return node.is_class("Area2D"))
 	for i in range(children.size()):
 		children[i].set_rotation_point(sun.position)
 		children[i].set_distance_from_point((i+1) * distance_between_planets)

@@ -13,7 +13,7 @@
 			"tasks": [
 				"f7573039-2e65-4f6e-a65c-e202e22742df",
 				"fd91de32-5a79-4d93-a585-2353f8f7b7b2",
-				"bfb74ce9-ea36-49b2-81db-2f48e2d0cf99"
+				"53c657e8-a9a0-4e47-9fd8-7d04cf49ed01"
 			]
 		},
 		{
@@ -27,7 +27,8 @@
 			"tasks": [
 				"3ce2c546-5743-4771-af19-8c414979c093",
 				"4a270e29-7c38-421b-a40a-f946f88ee2b0",
-				"0549fa4c-84dd-43ff-8f5f-8f90cf183dbe"
+				"0549fa4c-84dd-43ff-8f5f-8f90cf183dbe",
+				"bfb74ce9-ea36-49b2-81db-2f48e2d0cf99"
 			]
 		}
 	],
@@ -100,6 +101,13 @@
 			"uuid": "f7573039-2e65-4f6e-a65c-e202e22742df",
 			"title": "Implement idea of \"rings\" structure that stores the planet at each ring. When an asteroid destroy's them play an explosion animation and repopulate the ring some time from the impact.",
 			"description": "",
+			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
+			"steps": []
+		},
+		{
+			"uuid": "53c657e8-a9a0-4e47-9fd8-7d04cf49ed01",
+			"title": "Adjust the planet size dynamically ",
+			"description": "The sun should be largest and planets should go from small to large as they get farther away.",
 			"category": "4354e3d9-3432-4cd3-a4e6-056353978db1",
 			"steps": []
 		}

@@ -1,4 +1,5 @@
 extends Area2D
+class_name planet
 
 @export var origin: Node
 @export var planet_stats: Resource

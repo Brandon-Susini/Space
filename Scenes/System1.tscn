@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c7feycji4nnlr" path="res://Scenes/planet.tscn" id="1_grdv0"]
 [ext_resource type="PackedScene" uid="uid://b3e57i4rw32hw" path="res://Meteor.tscn" id="2_j3xu0"]
 [ext_resource type="Resource" uid="uid://cnj6ixlnw3sdv" path="res://Resources/FastPlanet.tres" id="3_bqncp"]
-[ext_resource type="Texture2D" uid="uid://b7samym0fkhp8" path="res://neutral_point_light.webp" id="5_prpsy"]
+[ext_resource type="PackedScene" uid="uid://ckw3mbu7ttg33" path="res://Scenes/Sun.tscn" id="5_halnk"]
 [ext_resource type="PackedScene" uid="uid://dnytt3q4bkrq1" path="res://Scenes/StaticPlanet.tscn" id="6_ffhet"]
 
 [sub_resource type="Gradient" id="Gradient_8slhm"]
@@ -85,13 +85,14 @@ curve = SubResource("Curve2D_56wh2")
 wait_time = 5.0
 autostart = true
 
-[node name="Sun1" type="PointLight2D" parent="."]
+[node name="Sun" parent="." instance=ExtResource("5_halnk")]
 position = Vector2(960, 540)
-texture = ExtResource("5_prpsy")
 
-[node name="1" parent="Sun1" instance=ExtResource("6_ffhet")]
-
-[node name="2" parent="Sun1" node_paths=PackedStringArray("origin") instance=ExtResource("6_ffhet")]
+[node name="Planet" parent="Sun" node_paths=PackedStringArray("origin") instance=ExtResource("6_ffhet")]
 origin = NodePath("..")
+
+[node name="Planet2" parent="Sun" node_paths=PackedStringArray("origin") instance=ExtResource("6_ffhet")]
+origin = NodePath("..")
+planet_stats = ExtResource("3_bqncp")
 
 [connection signal="timeout" from="MeteorSpawnTimer" to="." method="_on_meteor_spawn_timer_timeout"]
