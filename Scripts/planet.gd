@@ -21,17 +21,15 @@ func _ready():
 		rotation_point = Vector2(screen.x/2,screen.y/2)
 	particles = $GPUParticles2D
 	mat = particles.process_material
+	#$AnimatedSprite2D.play()
 	#particles.amount = remap()
 	#mat.initial_velocity_min = planet_stats.particle_velocity
 	#mat.initial_velocity_max = mat.initial_velocity_min + planet_stats.particle_velocity_range
 	
-	$Sprite.texture = get_random_donut()
 	rotation_speed_mult = randf_range(0.8, 1.3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("leftClick"):
-		$Sprite.texture = get_random_donut()
 	global_position = rotation_point
 	global_position += Vector2(cos(current_angle), sin(current_angle)) * distance_from_point
 	current_angle += (planet_stats.rotation_speed * rotation_speed_mult) * delta

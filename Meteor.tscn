@@ -1,33 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://df4tn024u04q0"]
+[gd_scene load_steps=7 format=3 uid="uid://b3e57i4rw32hw"]
 
-[ext_resource type="Script" path="res://bomb.gd" id="1_i6kav"]
-[ext_resource type="SpriteFrames" uid="uid://calagxplon6yy" path="res://DonutFrames.tres" id="2_oxga1"]
-[ext_resource type="Material" uid="uid://bprcvpbrj22yx" path="res://Resources/particles.tres" id="3_k3v07"]
-[ext_resource type="Material" uid="uid://cf5t53j4ngflc" path="res://Resources/OrangeParticles.tres" id="4_eeda6"]
-[ext_resource type="Texture2D" uid="uid://b7samym0fkhp8" path="res://neutral_point_light.webp" id="5_2pstk"]
+[ext_resource type="Script" path="res://bomb.gd" id="1_qyq1d"]
+[ext_resource type="SpriteFrames" uid="uid://calagxplon6yy" path="res://DonutFrames.tres" id="2_y1o5m"]
+[ext_resource type="Material" uid="uid://bprcvpbrj22yx" path="res://Resources/particles.tres" id="3_sk8wd"]
+[ext_resource type="Material" uid="uid://cf5t53j4ngflc" path="res://Resources/OrangeParticles.tres" id="4_ku8uh"]
+[ext_resource type="Texture2D" uid="uid://b7samym0fkhp8" path="res://neutral_point_light.webp" id="5_oiigd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5dfw"]
 radius = 92.1954
 
 [node name="bomb" type="CharacterBody2D"]
 collision_mask = 0
-script = ExtResource("1_i6kav")
+script = ExtResource("1_qyq1d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 0.777
-sprite_frames = ExtResource("2_oxga1")
-animation = &"planet"
-frame_progress = 0.636867
+sprite_frames = ExtResource("2_y1o5m")
+animation = &"donuts"
 
 [node name="RedParticles" type="GPUParticles2D" parent="."]
 rotation = -1.60135
 amount = 16
-process_material = ExtResource("3_k3v07")
+process_material = ExtResource("3_sk8wd")
 trail_lifetime = 1.45
 
 [node name="YellowParticles" type="GPUParticles2D" parent="."]
 rotation = -1.60135
-process_material = ExtResource("4_eeda6")
+process_material = ExtResource("4_ku8uh")
 trail_lifetime = 1.45
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -39,13 +38,13 @@ position = Vector2(-1, -107)
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-1, -153)
 scale = Vector2(1.5, 3.79487)
-texture = ExtResource("5_2pstk")
+texture = ExtResource("5_oiigd")
 texture_scale = 0.39
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 scale = Vector2(1.5, 1.5)
 energy = 0.6
-texture = ExtResource("5_2pstk")
+texture = ExtResource("5_oiigd")
 texture_scale = 0.39
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

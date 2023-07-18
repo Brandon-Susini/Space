@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnytt3q4bkrq1"]
+[gd_scene load_steps=9 format=3 uid="uid://dnytt3q4bkrq1"]
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_28u3s"]
 [ext_resource type="Resource" uid="uid://bi5bqs4uwe63i" path="res://Resources/SlowPlanet.tres" id="2_tq83s"]
 [ext_resource type="Texture2D" uid="uid://b7samym0fkhp8" path="res://neutral_point_light.webp" id="3_knewb"]
+[ext_resource type="SpriteFrames" uid="uid://calagxplon6yy" path="res://DonutFrames.tres" id="4_1fbb2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tv03l"]
 radius = 53.0094
@@ -44,23 +45,13 @@ texture = ExtResource("3_knewb")
 texture_scale = 0.5
 height = 20.0
 
-[node name="Sprite" type="Sprite2D" parent="."]
-region_rect = Rect2(307.753, 28.6523, 104.533, 109.179)
-metadata/_aseprite_wizard_config_ = {
-"keep_anim_length": false,
-"layer": "",
-"o_ex_p": "",
-"o_folder": "",
-"o_name": "",
-"only_visible": false,
-"op_exp": false,
-"player": "",
-"source": "res://BombTestAnimated-export.aseprite"
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tv03l")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 process_material = SubResource("ParticleProcessMaterial_vrv6q")
 trail_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_1fbb2")
+animation = &"earth"
